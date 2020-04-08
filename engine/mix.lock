@@ -1,0 +1,4 @@
+%{
+  "jason": {:hex, :jason, "1.2.0", "10043418c42d2493d0ee212d3fddd25d7ffe484380afad769a0a38795938e448", [:mix], [{:decimal, "~> 1.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm"},
+  "wanakana": {:hex, :wanakana, "0.1.0", "d4ca2d7726fd89ea2264ba88f634dbc2f7a1740963e754578f59722e6bda5ed1", [:mix], [], "hexpm"},
+}
