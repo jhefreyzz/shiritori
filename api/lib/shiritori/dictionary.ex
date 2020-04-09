@@ -1,4 +1,4 @@
-defmodule Engine.Dictionary do
+defmodule Shiritori.Dictionary do
   use GenServer
 
   def start_link(_opts) do
@@ -10,7 +10,7 @@ defmodule Engine.Dictionary do
   end
 
   def init(:ok) do
-    state = Engine.Dictionary.Entries.load_entries()
+    state = Shiritori.Dictionary.Entries.load_entries()
     {:ok, state}
   end
 

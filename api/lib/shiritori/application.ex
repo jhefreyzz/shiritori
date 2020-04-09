@@ -11,7 +11,9 @@ defmodule Shiritori.Application do
       # Start the Ecto repository
       Shiritori.Repo,
       # Start the endpoint when the application starts
-      ShiritoriWeb.Endpoint
+      ShiritoriWeb.Endpoint,
+      Shiritori.Dictionary,
+      Shiritori.GameServer
       # Starts a worker by calling: Shiritori.Worker.start_link(arg)
       # {Shiritori.Worker, arg},
     ]

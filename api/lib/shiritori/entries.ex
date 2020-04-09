@@ -1,8 +1,8 @@
-defmodule Engine.Dictionary.Entries do
+defmodule Shiritori.Dictionary.Entries do
   require Logger
 
   def load_entries do
-    filename = "../data/records.json" |> Path.expand(__DIR__)
+    filename = "./data/records.json" |> Path.expand(__DIR__)
 
     Logger.info("Inserting entry to dictionary")
 

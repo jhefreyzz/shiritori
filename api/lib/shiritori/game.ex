@@ -1,11 +1,21 @@
-defmodule Engine.Game do
-  defstruct word_history: [], entries: [], turn: nil, scores: %{}, winner: nil, error: nil
+defmodule Shiritori.Game do
+  @derive {Jason.Encoder, only: [:entries, :error, :id, :name, :scores]}
+  defstruct id: nil,
+            name: nil,
+            word_history: [],
+            entries: [],
+            turn: 0,
+            scores: %{},
+            winner: nil,
+            error: nil,
+            status: 0
 
-  alias Engine.Dictionary
-  alias Engine.Game.Entry
+  alias Shiritori.Game
+  alias Shiritori.Dictionary
+  alias Shiritori.Game.Entry
 
-  def new do
-    %Engine.Game{}
+  def new(game_name) do
+    %Game{id: id(), name: game_name}
   end
 
   def add_word(game, word, player, _turn) do
@@ -52,4 +62,5 @@ defmodule Engine.Game do
   end
 
   defp word_exists(game, word), do: Enum.member?(game.word_history, word)
+  def id(), do: Integer.to_string(:rand.uniform(257_912_485_603), 16) |> String.downcase()
 end
